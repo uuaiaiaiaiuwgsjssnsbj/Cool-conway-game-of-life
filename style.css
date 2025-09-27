@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #0f1b2d;
+    color: #fff;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+#gameCanvas {
+    border: 2px solid #34495e;
+    background: #1a2b3c;
+    cursor: crosshair;
+    margin-bottom: 20px;
+}
+
+.rules-panel {
+    background: #1e2b3a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.rule-group {
+    display: grid;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.rule-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rule-item label {
+    width: 100px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.rule-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+}
+
+.rule-desc {
+    font-size: 0.9em;
+    color: #bdc3c7;
+    margin-left: 10px;
+}
+
+.rule-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+#presetSelect {
+    padding: 8px;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    background: #2c3e50;
+    color: white;
+}
+
+.current-rules {
+    background: #34495e;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.current-rules h4 {
+    margin: 0;
+    color: #e74c3c;
+}
+
+#deletePreset {
+    background: #e74c3c;
+}
+
+#deletePreset:hover {
+    background: #c0392b;
+}
