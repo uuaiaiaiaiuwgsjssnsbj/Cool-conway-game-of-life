@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Conway's Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Game of Life</h1>
+        
+        <div class="controls">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="resetBtn">Reset</button>
+            <button id="randomBtn">Random</button>
+            <span>Generation: <span id="generation">0</span></span>
+            <span>Speed: <input type="range" id="speed" min="1" max="20" value="10"></span>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="rules-panel">
+            <h3>Custom Rules Panel</h3>
+            
+            <div class="rule-group">
+                <div class="rule-item">
+                    <label>Born Rule:</label>
+                    <input type="number" id="bornMin" min="0" max="8" value="3" class="rule-input">
+                    <span>-</span>
+                    <input type="number" id="bornMax" min="0" max="8" value="3" class="rule-input">
+                    <span class="rule-desc">(Cell mati → hidup jika neighbors dalam range)</span>
+                </div>
+                
+                <div class="rule-item">
+                    <label>Alive Rule:</label>
+                    <input type="number" id="aliveMin" min="0" max="8" value="2" class="rule-input">
+                    <span>-</span>
+                    <input type="number" id="aliveMax" min="0" max="8" value="3" class="rule-input">
+                    <span class="rule-desc">(Cell hidup tetap hidup jika neighbors dalam range)</span>
+                </div>
+                
+                <div class="rule-item">
+                    <label>Dead Rule:</label>
+                    <input type="number" id="deadMin" min="0" max="8" value="0" class="rule-input">
+                    <span>-</span>
+                    <input type="number" id="deadMax" min="0" max="8" value="8" class="rule-input">
+                    <span class="rule-desc">(Cell hidup → mati jika neighbors dalam range)</span>
+                </div>
+                
+                <div class="rule-item">
+                    <label>Switch Rule:</label>
+                    <input type="number" id="switchMin" min="0" max="8" value="" class="rule-input" placeholder="off">
+                    <span>-</span>
+                    <input type="number" id="switchMax" min="0" max="8" value="" class="rule-input" placeholder="off">
+                    <span class="rule-desc">(Toggle cell jika neighbors dalam range)</span>
+                </div>
+            </div>
+            
+            <div class="rule-buttons">
+                <button id="applyRules">Apply Rules</button>
+                <button id="resetRules">Reset to Default</button>
+                <button id="savePreset">Save Preset</button>
+                <button id="deletePreset" style="display: none;">Delete Preset</button>
+                <select id="presetSelect">
+                    <option value="conway">Conway's Game of Life</option>
+                    <option value="highlife">HighLife (B36/S23)</option>
+                    <option value="maze">Maze Generator (B3/S12345)</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="current-rules">
+            <h4>Active Rules: 
+                <span id="activeBorn">Born: 3</span> | 
+                <span id="activeAlive">Alive: 2-3</span> | 
+                <span id="activeDead">Dead: 0-1,4-8</span> |
+                <span id="activeSwitch">Switch: off</span>
+            </h4>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
