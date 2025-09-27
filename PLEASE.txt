@@ -1,0 +1,4 @@
+make sure that you add aaa.html, 
+style.css
+and also game.js
+so... do have this file to work
